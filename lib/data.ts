@@ -18,6 +18,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
   {
     id: "mobile-ecommerce",
     title: "Mobile E-Commerce Engine",
@@ -31,9 +32,10 @@ export const projects: Project[] = [
     liveUrl: "https://mobile-ecommerce-engine-nygp.vercel.app",
     githubUrl: "https://github.com/notrexxx/mobile-ecommerce-engine.git",
     imageUrl: "/media/images/ecommerce.png",
-    videoUrl: "",
+    videoUrl: "/media/videos/ecommerce.mp4",
     imageStyle: "object-cover object-top",
   },
+
   {
     id: "agent-aide",
     title: "Agent Aide",
@@ -46,36 +48,38 @@ export const projects: Project[] = [
     notice: "This is a compiled Android APK. iOS or Desktop users please view the video demonstration below.",
     githubUrl: "https://github.com/notrexxx/AgentAide.git",
     imageUrl: "/media/images/agent-aide.png",
-    videoUrl: "",
+    videoUrl: "/media/videos/agent-aide.mp4",
     imageStyle: "object-contain p-4",
   },
+
+  {
+    id: "financial-analytics",
+    title: "Financial Analytics",
+    description: "React, Tailwind, Recharts. Massive data visualization dashboard.",
+    longDescription: "A data-dense financial tracking dashboard built to process and visualize large datasets on the client-side without layout shift or performance degradation.",
+    className: "md:col-span-1 lg:col-span-1", 
+    rowSpan: "",
+    icon: LineChart,
+    techStack: ["React", "Recharts", "Tailwind CSS", "Vite"],
+    githubUrl: "https://github.com/notrexxx/financial-tracker.git",
+    imageUrl: "/media/images/financial-analytics.png",
+    videoUrl: "/media/videos/financial-analytics.mp4",
+    imageStyle: "object-cover object-center",
+  },
+
   {
     id: "kanban-workspace",
     title: "Kanban Workspace",
     description: "Real-time WebSockets integration for enterprise task management.",
     longDescription: "An enterprise-grade project management tool utilizing bidirectional WebSockets for real-time collaboration, instantaneous state updates, and optimistic UI rendering.",
-    className: "md:col-span-1 lg:col-span-1",
+    className: "md:col-span-2 lg:col-span-2", 
     rowSpan: "",
     icon: Database,
     techStack: ["React", "WebSockets", "Node.js", "Tailwind CSS"],
     notice: "WebSockets server hosted on free tier. Initial connection may experience a brief cold-start delay.",
     githubUrl: "https://github.com/notrexxx/real-time-kanban.git",
     imageUrl: "/media/images/kanban-workspace.png",
-    videoUrl: "",
-    imageStyle: "object-cover",
-  },
-  {
-    id: "financial-analytics",
-    title: "Financial Analytics",
-    description: "React, Tailwind, Recharts. Massive data visualization dashboard.",
-    longDescription: "A data-dense financial tracking dashboard built to process and visualize large datasets on the client-side without layout shift or performance degradation.",
-    className: "md:col-span-3 lg:col-span-2",
-    rowSpan: "",
-    icon: LineChart,
-    techStack: ["React", "Recharts", "Tailwind CSS", "Vite"],
-    githubUrl: "https://github.com/notrexxx/financial-tracker.git",
-    imageUrl: "/media/images/financial-analytics.png",
-    videoUrl: "",
+    videoUrl: "/media/videos/kanban-workspace.mp4",
     imageStyle: "object-cover object-top",
   },
 ];
