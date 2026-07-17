@@ -32,7 +32,7 @@ export default function Home() {
                 className="h-full flex flex-col"
               >
                 {project.imageUrl ? (
-                  <div className="relative flex-grow min-h-[14rem] w-full mt-3 rounded-lg overflow-hidden border border-surface-border bg-zinc-950/50">
+                  <div className="relative grow min-h-56 w-full mt-3 rounded-lg overflow-hidden border border-surface-border bg-zinc-950/50">
                     <Image 
                       src={project.imageUrl} 
                       alt={`${project.title} preview`}
@@ -43,7 +43,7 @@ export default function Home() {
                     />
                   </div>
                 ) : (
-                  <div className="flex-grow min-h-[14rem] w-full bg-zinc-950/50 rounded-lg flex items-center justify-center border border-surface-border mt-3">
+                  <div className="grow min-h-56 w-full bg-zinc-950/50 rounded-lg flex items-center justify-center border border-surface-border mt-3">
                     <Icon className="w-10 h-10 text-accent/50" />
                   </div>
                 )}

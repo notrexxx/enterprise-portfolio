@@ -1,6 +1,7 @@
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { 
   ArrowLeft, 
   ExternalLink, 
@@ -29,8 +30,48 @@ const getTechIcon = (tech: string) => {
   if (t.includes('websocket')) return Radio;
   if (t.includes('android')) return Smartphone;
   if (t.includes('llm')) return Cpu;
-  return Code2; // Fallback icon
+  return Code2; 
 };
+
+// Next.js Dynamic Metadata Generator
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.id === resolvedParams.id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  const ogUrl = new URL("https://andresleon.dev/api/og");
+  ogUrl.searchParams.set("title", project.title);
+  ogUrl.searchParams.set("desc", project.description);
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: "article",
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [ogUrl.toString()],
+    },
+  };
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -70,7 +111,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       {/* Infrastructure / Technical Notice */}
       {project.notice && (
         <div className="mb-10 p-4 rounded-lg bg-zinc-900/80 border border-accent/20 flex items-start space-x-3">
-          <AlertCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
           <p className="text-sm text-zinc-300 leading-relaxed">
             <span className="font-semibold text-accent">Infrastructure Note: </span>
             {project.notice}
@@ -143,7 +184,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
       ) : (
         <div className="w-full aspect-video bg-surface rounded-xl border border-surface-border flex flex-col items-center justify-center text-zinc-500 overflow-hidden relative shadow-sm">
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-tr from-accent/5 to-transparent pointer-events-none" />
           <span className="mb-2 text-2xl">🎥</span>
           <p className="text-sm text-center px-4">
             Video module initialized. Awaiting media assets.

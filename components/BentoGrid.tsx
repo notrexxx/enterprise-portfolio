@@ -63,7 +63,7 @@ export function BentoCard({ title, description, className = "", children }: Bent
         <h3 className="text-lg md:text-xl font-semibold text-foreground tracking-tight">{title}</h3>
         <p className="text-zinc-400 text-xs md:text-sm mt-1 leading-snug">{description}</p>
       </div>
-      <div className="flex-grow flex flex-col justify-end">
+      <div className="grow flex flex-col justify-end">
         {children}
       </div>
     </motion.div>
