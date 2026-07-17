@@ -33,7 +33,6 @@ const getTechIcon = (tech: string) => {
   return Code2; 
 };
 
-// Next.js Dynamic Metadata Generator
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const project = projects.find((p) => p.id === resolvedParams.id);
@@ -44,7 +43,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     };
   }
 
-  const ogUrl = new URL("https://andresleon.dev/api/og");
+
+  const ogUrl = new URL("https://andres-portfolio-tau.vercel.app/api/og");
   ogUrl.searchParams.set("title", project.title);
   ogUrl.searchParams.set("desc", project.description);
 

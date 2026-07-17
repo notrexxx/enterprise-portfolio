@@ -8,6 +8,7 @@ import { ContactModal } from "@/components/ContactModal";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://andres-portfolio-tau.vercel.app"),
   title: {
     default: "Andres Leon | Software Engineer",
     template: "%s | Andres Leon",
@@ -19,13 +20,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://andresleon.dev",
+    url: "https://andres-portfolio-tau.vercel.app", 
     title: "Andres Leon | Software Engineer",
     description: "Computer Science Engineer and Full-Stack Developer specializing in React, React Native, Node.js, and SQL.",
     siteName: "Andres Leon Portfolio",
     images: [
       {
-        url: "/api/og",
+        url: "/api/og", 
         width: 1200,
         height: 630,
         alt: "Andres Leon Portfolio",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Andres Leon | Software Engineer",
     description: "Computer Science Engineer and Full-Stack Developer specializing in React, Node.js, and SQL.",
-    creator: "@notrexxx",
+    creator: "@notrexxx", 
     images: ["/api/og"],
   },
 };
@@ -51,7 +52,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-foreground antialiased selection:bg-accent/30 selection:text-white min-h-screen flex flex-col`}>
         <UIProvider>
           <Navbar />
-          <div className="flex-grow">
+          <div className="grow">
             {children}
           </div>
           <ContactModal />

@@ -3,7 +3,7 @@ import { projects } from "@/lib/data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
-  const baseUrl = "";
+  const baseUrl = "https://andres-portfolio-tau.vercel.app";
 
   const projectUrls = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.id}`,

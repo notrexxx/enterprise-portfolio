@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "/sitemap.xml",
+    sitemap: "https://andres-portfolio-tau.vercel.app/sitemap.xml",
   };
 }
