@@ -4,6 +4,7 @@ import "./globals.css";
 import { UIProvider } from "@/context/UIContext";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,6 +56,7 @@ export default function RootLayout({
           <div className="grow">
             {children}
           </div>
+          <Footer />
           <ContactModal />
         </UIProvider>
       </body>
