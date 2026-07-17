@@ -21,40 +21,40 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-surface-border bg-background/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
         
         <Link href="/" className="flex items-center space-x-2 group">
           <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center transition-colors group-hover:bg-accent/20">
             <span className="text-accent font-bold text-sm tracking-tighter">AL</span>
           </div>
-          <span className="font-semibold text-foreground tracking-tight">Andres Leon</span>
+          <span className="font-semibold text-foreground tracking-tight text-sm">Andres Leon</span>
         </Link>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3">
           <a 
             href="https://github.com/notrexxx" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-2 rounded-md text-zinc-400 hover:text-foreground hover:bg-surface transition-all"
+            className="p-1.5 rounded-md text-zinc-400 hover:text-foreground hover:bg-surface transition-all"
             aria-label="GitHub Profile"
           >
-            <GithubIcon className="w-5 h-5" />
+            <GithubIcon className="w-4 h-4" />
           </a>
           <a 
             href="https://linkedin.com/in/emigdio-leon-689109195" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-2 rounded-md text-zinc-400 hover:text-foreground hover:bg-surface transition-all"
+            className="p-1.5 rounded-md text-zinc-400 hover:text-foreground hover:bg-surface transition-all"
             aria-label="LinkedIn Profile"
           >
-            <LinkedInIcon className="w-5 h-5" />
+            <LinkedInIcon className="w-4 h-4" />
           </a>
-          <div className="w-px h-6 bg-surface-border mx-2" /> 
+          <div className="w-px h-5 bg-surface-border mx-1" /> 
           <button 
             onClick={openContact}
-            className="flex items-center space-x-2 px-4 py-2 rounded-md bg-foreground text-background font-medium hover:bg-zinc-200 transition-colors text-sm"
+            className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-foreground text-background font-medium hover:bg-zinc-200 transition-colors text-xs"
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-3.5 h-3.5" />
             <span>Contact</span>
           </button>
         </div>

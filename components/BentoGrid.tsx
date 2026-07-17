@@ -24,7 +24,7 @@ export function BentoGrid({ children, className = "" }: BentoGridProps) {
       variants={gridVariants}
       initial="hidden"
       animate="show"
-      className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(220px,auto)] max-w-7xl mx-auto w-full ${className}`}
+      className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(210px,auto)] max-w-7xl mx-auto w-full ${className}`}
     >
       {children}
     </motion.div>
@@ -57,11 +57,11 @@ export function BentoCard({ title, description, className = "", children }: Bent
       variants={cardVariants}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.98 }}
-      className={`p-6 rounded-2xl bg-surface border border-surface-border shadow-sm flex flex-col overflow-hidden transition-colors duration-300 hover:border-accent/50 hover:shadow-[0_0_15px_var(--tw-shadow-color)] hover:shadow-accent/10 cursor-pointer ${className}`}
+      className={`p-5 rounded-2xl bg-surface border border-surface-border shadow-sm flex flex-col overflow-hidden transition-colors duration-300 hover:border-accent/50 hover:shadow-[0_0_15px_var(--tw-shadow-color)] hover:shadow-accent/10 cursor-pointer ${className}`}
     >
-      <div className="mb-4">
-        <h3 className="text-xl font-semibold text-foreground tracking-tight">{title}</h3>
-        <p className="text-zinc-400 text-sm mt-1">{description}</p>
+      <div className="mb-3">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground tracking-tight">{title}</h3>
+        <p className="text-zinc-400 text-xs md:text-sm mt-1 leading-snug">{description}</p>
       </div>
       <div className="flex-grow flex flex-col justify-end">
         {children}
