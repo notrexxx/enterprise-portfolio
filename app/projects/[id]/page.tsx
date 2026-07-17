@@ -90,14 +90,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
       </div>
 
-      {/* Video Demo Placeholder */}
-      <div className="w-full aspect-video bg-surface rounded-xl border border-surface-border flex flex-col items-center justify-center text-zinc-500 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent pointer-events-none" />
-        <span className="mb-2 text-2xl">🎥</span>
-        <p className="text-sm text-center px-4">
-          Replace this block with an embedded iframe of a YouTube or Loom video demonstrating the app.
-        </p>
-      </div>
+      {/* Media Player Component */}
+      {project.videoUrl ? (
+        <div className="w-full aspect-video bg-black rounded-xl border border-surface-border overflow-hidden relative shadow-lg shadow-accent/5">
+          <video 
+            src={project.videoUrl} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover" 
+          />
+        </div>
+      ) : (
+        <div className="w-full aspect-video bg-surface rounded-xl border border-surface-border flex flex-col items-center justify-center text-zinc-500 overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent pointer-events-none" />
+          <span className="mb-2 text-2xl">🎥</span>
+          <p className="text-sm text-center px-4">
+            Video module initialized. Awaiting media assets.
+          </p>
+        </div>
+      )}
 
     </main>
   );
