@@ -63,7 +63,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/notrexxx/financial-tracker.git",
     imageUrl: "/media/images/financial-analytics.png",
     videoUrl: "/media/videos/financial-analytics.mp4",
-    imageStyle: "object-cover object-left-top",
+    imageStyle: "object-contain object-center scale-[1.5] hover:scale-[1.45] transition-transform duration-700 ease-out",
   },
   {
     id: "kanban-workspace",
