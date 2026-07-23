@@ -5,6 +5,7 @@ import { UIProvider } from "@/context/UIContext";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,6 +60,7 @@ export default function RootLayout({
           <Footer />
           <ContactModal />
         </UIProvider>
+        <GoogleAnalytics gaId="G-1MPWTYZQM7" />
       </body>
     </html>
   );

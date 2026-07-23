@@ -18,7 +18,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-
   {
     id: "mobile-ecommerce",
     title: "Mobile E-Commerce Engine",
@@ -35,7 +34,6 @@ export const projects: Project[] = [
     videoUrl: "/media/videos/ecommerce.mp4",
     imageStyle: "object-cover object-top",
   },
-
   {
     id: "agent-aide",
     title: "Agent Aide",
@@ -49,9 +47,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/notrexxx/AgentAide.git",
     imageUrl: "/media/images/agent-aide.png",
     videoUrl: "/media/videos/agent-aide.mp4",
-    imageStyle: "object-contain p-4",
+    imageStyle: "object-cover object-top",
   },
-
   {
     id: "financial-analytics",
     title: "Financial Analytics",
@@ -66,9 +63,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/notrexxx/financial-tracker.git",
     imageUrl: "/media/images/financial-analytics.png",
     videoUrl: "/media/videos/financial-analytics.mp4",
-    imageStyle: "object-cover object-center",
+    imageStyle: "object-cover object-left-top",
   },
-
   {
     id: "kanban-workspace",
     title: "Kanban Workspace",
