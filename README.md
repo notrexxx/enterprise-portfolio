@@ -5,33 +5,39 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Google Analytics 4](https://img.shields.io/badge/GA4_Telemetry-E37400?style=for-the-badge&logo=google-analytics&logoColor=white)
 
 <div align="center">
   <img src="./assets/hero-image.png" alt="Portfolio Main Dashboard" width="800" />
 </div>
 <br />
 
-A high-performance, software engineering portfolio designed to showcase scalable SaaS applications, mobile e-commerce engines, and full-stack system architecture. Built with an extreme focus on SEO, zero-layout-shift UI/UX, and rigorous code quality using the modern Next.js App Router.
+A high-performance software engineering portfolio designed to showcase scalable SaaS applications, mobile e-commerce engines, and full-stack system architecture. Built with an extreme focus on SEO, zero-layout-shift UI/UX, data-driven conversion tracking, and rigorous code quality using the modern Next.js 15 App Router.
 
-## 🚀 Live Deployments
+## 🚀 Live Deployment
 
 - 🌐 **Production (Vercel):** [https://andres-portfolio-tau.vercel.app](https://andres-portfolio-tau.vercel.app)
 
 ---
 
-## ✨ Features & Architecture Breakdown
+## ✨ System Architecture & Features
 
-This application serves as a living demonstration of production-ready frontend engineering, divided into structural, visual, and performance architectures.
+This application serves as a living demonstration of production-ready frontend engineering, divided into structural, visual, analytical, and security architectures.
 
-### 🍱 The Bento Box UI/UX
-* **Visual Hierarchy:** Implements a modern "Bento Box" asymmetrical grid architecture. This allows for optimal scannability, allocating premium screen real estate to complex, full-stack projects while elegantly housing secondary tools.
-* **Deep Dark Design System:** Utilizes a strictly controlled color palette anchored in `zinc-950` to respect user screen fatigue, paired with high-contrast, glowing `cyan-400` accents for terminal and interactive elements.
-* **Apple-Tier Haptics & Motion:** *(Incoming Feature)* Integrates Framer Motion for hardware-accelerated, buttery 60fps load-in staggers and hover transformations, ensuring a premium tactile feel on both web and mobile.
+### 🍱 The Bento Box UI/UX & Motion Physics
+* **Visual Hierarchy:** Implements a modern "Bento Box" asymmetrical grid architecture for optimal scannability, allocating premium screen real estate to complex, full-stack projects.
+* **Apple-Tier Haptics:** Integrates Framer Motion for hardware-accelerated, buttery 60fps load-in staggers and hover transformations. 
+* **Inversion of Control (IoC):** Uses a strict compositional pattern to isolate Framer Motion Client Components (`BentoGrid.tsx`) from the Next.js Server Components (`page.tsx`), ensuring maximum interactivity without sacrificing Server-Side Rendering (SSR) performance.
 
-### ⚙️ The Engine (Next.js & React Server Components)
+### 📊 Custom Telemetry & Analytics Pipeline
+* **GA4 Integration:** Implements the `@next/third-parties/google` library for zero-blocking background telemetry.
+* **Conversion Tracking:** Features a highly reusable `<TrackedLink>` wrapper component that intercepts user interactions to dispatch custom data layer events (e.g., `outbound_github_click`, `outbound_demo_click`) directly to Google Analytics before executing native routing.
+
+### 🛡️ Enterprise Security & Engine (Next.js)
+* **Edge Security Headers:** Configured via `vercel.json` to enforce strict HTTP security headers at the edge network layer, including `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, and `Strict-Transport-Security`.
 * **Zero JS by Default:** Heavily leverages React Server Components (RSC) to ship static HTML to the client for the foundational layout, maximizing Lighthouse scores and time-to-interactive metrics.
 * **Atomic CSS:** Tailwind CSS is used strictly to enforce design tokens, resulting in a microscopic CSS bundle and absolutely zero runtime styling overhead.
-* **Strict Gitflow:** Repository maintained under strict CI/CD guidelines, utilizing isolated feature branching and staging environments before pushing to Vercel production.
 
 ---
 
@@ -47,6 +53,9 @@ This application serves as a living demonstration of production-ready frontend e
 - **Styling:** Tailwind CSS (Atomic engine)
 - **Icons:** Lucide React
 - **Animations:** Framer Motion
+- **Telemetry:** Google Analytics 4
+
+---
 
 ## 🚀 How to Run Locally
 
