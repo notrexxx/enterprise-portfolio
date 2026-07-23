@@ -2,6 +2,7 @@ import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { TrackedLink } from "@/components/TrackedLink";
 import { 
   ArrowLeft, 
   ExternalLink, 
@@ -19,7 +20,6 @@ import {
   Code2
 } from "lucide-react";
 
-// Intelligent icon mapper based on technology name
 const getTechIcon = (tech: string) => {
   const t = tech.toLowerCase();
   if (t.includes('react') || t.includes('expo')) return Atom;
@@ -42,7 +42,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       title: "Project Not Found",
     };
   }
-
 
   const ogUrl = new URL("https://andres-portfolio-tau.vercel.app/api/og");
   ogUrl.searchParams.set("title", project.title);
@@ -119,29 +118,33 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
       )}
 
-      {/* Action Buttons */}
+      {/* Action Buttons - Now equipped with custom GA4 Telemetry */}
       <div className="flex flex-wrap gap-4 mb-14">
         {project.liveUrl && (
-          <a 
+          <TrackedLink 
             href={project.liveUrl} 
             target="_blank" 
             rel="noopener noreferrer"
+            eventName="outbound_demo_click"
+            eventParams={{ project_id: project.id, project_title: project.title }}
             className="inline-flex items-center px-4 py-2 rounded-md bg-accent text-background font-medium hover:bg-accent/90 transition-colors shadow-sm"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             View Live App
-          </a>
+          </TrackedLink>
         )}
         {project.githubUrl && (
-          <a 
+          <TrackedLink 
             href={project.githubUrl} 
             target="_blank" 
             rel="noopener noreferrer"
+            eventName="outbound_github_click"
+            eventParams={{ project_id: project.id, project_title: project.title }}
             className="inline-flex items-center px-4 py-2 rounded-md bg-surface border border-surface-border text-foreground hover:bg-zinc-800 transition-colors shadow-sm"
           >
             <Code className="w-4 h-4 mr-2" />
             View Source Code
-          </a>
+          </TrackedLink>
         )}
       </div>
 

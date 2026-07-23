@@ -1,6 +1,6 @@
 import { BentoGrid, BentoCard } from "@/components/BentoGrid";
+import { TrackedLink } from "@/components/TrackedLink";
 import { projects } from "@/lib/data";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,9 +21,14 @@ export default function Home() {
           const Icon = project.icon;
           
           return (
-            <Link 
+            <TrackedLink 
               key={project.id} 
               href={`/projects/${project.id}`} 
+              eventName="project_card_clicked"
+              eventParams={{
+                project_id: project.id,
+                project_title: project.title
+              }}
               className={`group block ${project.className || ""} ${project.rowSpan || ""}`}
             >
               <BentoCard 
@@ -48,7 +53,7 @@ export default function Home() {
                   </div>
                 )}
               </BentoCard>
-            </Link>
+            </TrackedLink>
           );
         })}
       </BentoGrid>
