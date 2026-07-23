@@ -24,7 +24,7 @@ export default function Home() {
             <Link 
               key={project.id} 
               href={`/projects/${project.id}`} 
-              className={`${project.className} ${project.rowSpan || ""}`}
+              className={`group block ${project.className || ""} ${project.rowSpan || ""}`}
             >
               <BentoCard 
                 title={project.title} 
@@ -39,12 +39,12 @@ export default function Home() {
                       fill
                       priority={index === 0}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className={`transition-transform duration-500 hover:scale-105 ${project.imageStyle}`}
+                      className={`transition-transform duration-500 group-hover:scale-105 ${project.imageStyle || ""}`}
                     />
                   </div>
                 ) : (
                   <div className="grow min-h-56 w-full bg-zinc-950/50 rounded-lg flex items-center justify-center border border-surface-border mt-3">
-                    <Icon className="w-10 h-10 text-accent/50" />
+                    {Icon && <Icon className="w-10 h-10 text-accent/50" />}
                   </div>
                 )}
               </BentoCard>
